@@ -1,4 +1,6 @@
 <h1>这是主页</h1>
 {% for miao in miao_shu.all %}
 {{miao.description}}
+<img src="{{miao.image.url}}" alt="tu">
+
 {% endfor %}
