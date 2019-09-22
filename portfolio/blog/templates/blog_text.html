@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ blog.title }}</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+        <div class="jumbotron text-center" style="margin-bottom:0">
+                <h1>我的第一个 Bootstrap 4 页面</h1>
+                <p>重置浏览器窗口大小查看效果！</p> 
+              </div>
+              
+              <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a class="navbar-brand" href="#">导航</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="..">首页</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/blog">博客</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">链接</a>
+                    </li>    
+                  </ul>
+                </div>  
+              </nav>
+
+              
+        <div class="container"><h2 class="text-center">{{ blog.title }}</h2></div>
+        <div class="container">
+            
+            <img class="container" width="900" height="350" src="{{blog.image.url}}" >
+            <p class="text-right">{{ blog.creat_time }}</p>
+            <div><p class="lead" >{{blog.text}}</p></div>
+        </div>
+</body>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
