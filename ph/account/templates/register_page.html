@@ -1,20 +1,30 @@
-<div class="">
-<form action="注册页面" method="post">
-    <p>用户注册</p>
-    <br>
-    <p>用户名：</p>
-    <input type="text" name="user_name" id="user">
-    <br>
-    <p>密码：</p>
-    <input type="password" name="pass_word" id="pass">
-    <br>
-    <p>确认密码：</p>
-    <input type="password" name="verify_pass_word" id="pass">
-    <br>
-    <br>
-    <input type="submit" value="确认">
+{% extends 'home.html' %}
 
 
+{% block home %}     
 
-</form>
+<div class="container ">
+    
+        <h2>用户注册</h2>
+        
+        <form class="form-horizontal" action="{% url '注册页面' %}" method="post" >
+        <div class="form-group">
+            <label for="user_name">用户名：</label>
+            <input type="text" name="user_name" id="user_name">
+        </div>
+        
+        <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" name="password" id="password">
+        </div>
+        <div class="form-group">
+                <label for="password">用户名：</label>
+                <input type="password" name="r_password" id="password">
+        </div>
+        <input type="submit" value="确认">
+    </form>
 </div>
+
+{% endblock home %}
+
+
