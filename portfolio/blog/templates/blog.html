@@ -11,7 +11,7 @@
 {{ blog.text }}
 <br>
 {% endfor %} -->
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,7 @@
     <div class="col-sm-4">
       <h2>关于我</h2>
       <h5>我的照片:</h5>
-      <div class="fakeimg">这边插入图像</div>
+      <img src="{% static 'timg.jpg' %}" width="100%">
       <p>关于我的介绍..</p>
       <h3>一些链接</h3>
       <p>说明文本</p>
