@@ -32,4 +32,10 @@ def login(request):
             return render(request,'login.html', {'错误':'用户名或密码错误'})
         else:
             auth.login(request,user)
-            return redirect('主页')         
+            return redirect('主页')     
+
+
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return render(request,'主页')                

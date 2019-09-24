@@ -32,12 +32,21 @@
 
   <!-- Links -->
   <ul class="nav navbar-right">
+      {% if user.is_authenticated %}
         <li class="nav-item">
+          <a class="nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>
+        </li>
+        <from id='退出' medthod='POST' action="{% url '退出页面'%}">
+
+      {% else %}
+      <li class="nav-item">
           <a class="nav-link" href="{% url '登录页面' %}">登录</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url '注册页面' %}">注册</a>
         </li>
+      {% endif %}
+        
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
