@@ -33,10 +33,13 @@
   <!-- Links -->
   <ul class="nav navbar-right">
       {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>
-        </li>
-        <from id='退出' medthod='POST' action="{% url '退出页面'%}">
+        
+          <a class="nav-item nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>
+        
+        <form id='退出' method='POST' action="{% url '退出页面'%}">
+        {% csrf_token %}
+        <input type="hidden">
+        </form>
 
       {% else %}
       <li class="nav-item">

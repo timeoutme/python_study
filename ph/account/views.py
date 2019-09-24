@@ -28,7 +28,7 @@ def login(request):
         user_name = request.POST['用户名']
         password1 = request.POST['密码']
         user = auth.authenticate(username=user_name,password=password1)
-        if user == None:
+        if user is None:
             return render(request,'login.html', {'错误':'用户名或密码错误'})
         else:
             auth.login(request,user)
@@ -38,4 +38,4 @@ def login(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        return render(request,'主页')                
+        return redirect('主页')                
