@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block home %}
+
+<div>
+    {{product_detail.title}}
+    <br>
+    {{product_detail.intro}}
+    <br>
+    <img src="{{product_detail.product_image.url}}" alt="">
+</div>    
+
+{% endblock home %}

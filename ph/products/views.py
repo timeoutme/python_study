@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Products
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
@@ -34,3 +34,9 @@ def publish(request):
 def products_list(request):
     products = Products.objects
     return render(request,'products_list.html',{'products':products})
+
+
+# 产品详情
+def product_detail(request,product_id):
+    product_detail = get_object_or_404(Products,pk=product_id)
+    return render(request,'product_detail.html', {'product_detail':product_detail})
