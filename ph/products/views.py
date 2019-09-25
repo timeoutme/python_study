@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+# 产品发布
 @login_required
 def publish(request):
     if request.method == 'GET':    
@@ -27,8 +28,8 @@ def publish(request):
             product.save()
             return redirect('主页') 
         except Exception as err:
-            return render(request,'publish.html',{'错误':err})
-        
-        
-
-        
+            return render(request,'publish.html',{'错误':err})       
+    
+# 产品列表
+def products_list(request):
+    return render(request,'products_list.html')

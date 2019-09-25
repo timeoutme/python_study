@@ -25,6 +25,7 @@ urlpatterns = [
     path('', home,name='主页'),
     path('account/', include('account.urls')),
     path('products/', include('products.urls')),
+    
     # path('account/', account.views.register_page, name='注册页面'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
