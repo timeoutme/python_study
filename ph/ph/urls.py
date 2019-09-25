@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import home
-import account.views
+from  django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home,name='主页'),
     path('account/', include('account.urls')),
+    path('products/', include('products.urls')),
     # path('account/', account.views.register_page, name='注册页面'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
