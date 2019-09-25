@@ -32,4 +32,5 @@ def publish(request):
     
 # 产品列表
 def products_list(request):
-    return render(request,'products_list.html')
+    products = Products.objects
+    return render(request,'products_list.html',{'products':products})
